@@ -25,8 +25,8 @@ contract Bank{
 
 
     }
-    //查询 余额
-    function checkBalanceOfAddr() public view returns(uint256){
+    //查询自己余额
+    function checkBalanceOfSelf() public view returns(uint256){
         uint256 balance = addrToBalance[msg.sender];
         return balance;
     }
