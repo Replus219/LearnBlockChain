@@ -28,7 +28,7 @@ describe("Counter", function () {
 
   it("not owner counter", async function () {
     const [owner, otherAccount] = await ethers.getSigners();
-    expect(await counter.connect(otherAccount).count()).to.be.rejectedWith(
+    await expect(counter.connect(otherAccount).count()).to.be.revertedWith(
       "Not Owner"
     );
   });
